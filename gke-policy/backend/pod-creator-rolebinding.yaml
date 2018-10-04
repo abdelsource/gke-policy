@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pod-creators-binding
+  namespace: backend
+subjects:
+- kind: User
+  name: backend-dev@abdel.cloud
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-creator-role
+  apiGroup: rbac.authorization.k8s.io
